@@ -1,0 +1,466 @@
+body {
+  margin: 0;
+  max-width: 100%;
+    font-family:'Courier New', Courier, monospace;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  header {
+    display:flex;
+    text-align: left;
+  }
+
+  #chatTitle {
+    font-size: 22px;
+  }
+  .sp-menu {
+    margin-left: auto;
+    text-align:right;
+  }
+  .sp-menu #open {
+    font-size: 36px;
+    line-height: 50px;
+    cursor: pointer;
+  }
+  .sp-menu #open.hide {
+    display:none;
+  }
+  .overlay {
+    position:fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    text-align: center;
+    padding-top: 48px;
+    padding-right:16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity.6s;
+    background:white;
+  }
+  .overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .overlay #close {
+    position:absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  .overlay ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  .overlay li {
+    text-align:right;
+    margin-top: 24px;
+    opacity: 0;
+    transform: translateX(16px);
+    transition: opacity .3s, transform .3s;
+  }
+  .overlay.show li {
+    opacity: 1;
+    transform: none;
+  }
+  .overlay.show li:nth-child(1) {
+    transition-delay: .2s;
+    padding-right: 10px;
+  }
+  .overlay.show li:nth-child(2) {
+    padding-right:16px;
+    transition-delay: .4s;
+  }
+  .overlay.show li:nth-child(3) {
+    transition-delay: .6s;
+  }
+  .pc-menu {
+    display: none;
+  }
+  @media (min-width: 600px) {
+    .pc-menu {
+      display: block;
+      margin-left: auto;
+    }
+    .pc-menu ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .pc-menu a {
+      display: block;
+      width: 140px;
+      line-height: 70px;
+      text-align: center;
+    }
+    .pc-menu a:hover {
+      background: #f2f2f2;
+    }
+    .sp-menu {
+      display: none;
+    }
+  }
+   
+  @media screen and (min-width: 1000px) {
+    .top-wrapper {
+      text-align: center;
+      padding: 10px 0 300px 0;
+      background-image: url(../IMG/venaqui_background.jpg);
+      background-size: cover;
+      height: 450px;
+      background-repeat: no-repeat;
+    }
+
+    .venaquiImg {
+      position: fixed;
+      width: 250px;
+      width: 250px;
+      margin-top: -100px;
+      margin-left: -50px;
+    }
+    
+    .maincontainer h1{
+      padding-top: 100px;
+      font-family: serif;
+      font-size: 60px;
+      color: turquoise;
+      text-shadow: rgb(67, 66, 66) 10px 10px 30px;
+    }
+    
+    .maincontainer h2 {
+      padding-top: 30px;
+      letter-spacing: 10px;
+      font-size: 40px;
+    }
+    
+    .maincontainer p {
+      padding-top: 60px;
+      letter-spacing: 3px;
+      font-size: 25px;
+    }
+    
+    .btn-wrapper {
+      margin-top: 150px;
+    }
+    
+    .btn {
+      color: white;
+      display: inline;
+      text-align: center;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: rgb(36, 124, 115);
+      background-color:turquoise;
+      font-size: 20px;
+    }
+    
+    .btn:active {
+      position:relative;
+      background-color:rgb(172, 170, 170);
+      top:7px;
+      box-shadow: none;
+    }
+    
+    .btn:hover {
+      opacity: 1;
+    }
+
+    .btn-one {
+      color:rgb(67, 66, 66);
+      font-family:initial;
+    }
+
+    .btn-two {
+      color:rgb(67, 66, 66);
+      font-family: initial;
+    }
+
+    .btn-three {
+      color:rgb(67, 66, 66);
+      font-family: initial;
+    }
+
+    .maintitle{
+      color: turquoise;
+      width: 100%;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      position:absolute;
+      font-size: 300px;
+      text-align: center;
+      margin-top: -400px;
+      opacity: 0.1;
+      overflow: hidden;
+    }
+
+    .venaqui {
+      position: fixed;
+      bottom: 20px;
+      font-size: 40px;
+      font-family: monospace;
+      -webkit-writing-mode : vertical-lr;
+      writing-mode         : vertical-lr;
+      margin-left: 40px;
+    }
+  
+    .heading img {
+      width: 300px;
+      height: 200px;
+      margin-bottom: 50px;
+    }
+
+    .heading p {
+      margin-bottom: 50px;
+    }
+
+    .description-wrapper {
+      margin-top: 200px;
+      text-align: center;
+      font-size: 25px;
+    }
+  }
+  
+  
+  @media screen and (max-width: 1000px) and (min-width: 500px) {
+    .top-wrapper {
+      text-align: center;
+      padding: 10px 0 300px 0;
+      background-image: url(../IMG/venaqui_background.jpg);
+      background-size: cover;
+      height: 300px;
+      background-repeat: no-repeat;
+    }
+    
+    .venaquiImg {
+      position: fixed;
+      width: 250px;
+      width: 250px;
+      margin-top: -100px;
+      margin-left: -50px;
+    }
+
+    .maincontainer h1 {
+      padding-top: 100px;
+      font-family:serif;
+      font-size: 40px;
+      color:turquoise;
+      text-shadow: rgb(67, 66, 66) 10px 10px 30px;
+    }
+    
+    .maincontainer h2 {
+      padding-top: 30px;
+      letter-spacing: 10px;
+      font-size: 30px;
+    }
+    
+    .maincontainer p {
+      padding-top: 60px;
+      letter-spacing: 3px;
+      font-size: 15px;
+    }
+    
+    .btn-wrapper {
+      margin-top: 50px;
+    }
+    
+    .btn {
+      color: white;
+      display: inline;
+      text-align: center;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: rgb(36, 124, 115);
+      background-color:turquoise;
+    }
+
+    .btn:active {
+      position:relative;
+      background-color:rgb(172, 170, 170);
+      top:7px;
+      box-shadow: none;
+    }
+    
+    .btn:hover {
+      opacity: 1;
+    }
+
+    .btn-one {
+      color:rgb(67, 66, 66);
+      font-family:initial;
+    }
+
+    .btn-two {
+      color:rgb(67, 66, 66);
+      font-family: initial;
+    }
+
+    .btn-three {
+      color:rgb(67, 66, 66);
+      font-family: initial;
+    }
+
+    .maintitle{
+      color: turquoise;
+      width: 100%;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      position: absolute;
+      font-size: 200px;
+      text-align: center;
+      margin-top: -250px;
+      opacity: 0.1;
+      overflow: hidden;
+    }
+
+    .venaqui {
+      position: fixed;
+      bottom: 20px;
+      font-size: 30px;
+      font-family: monospace;
+      -webkit-writing-mode : vertical-lr;
+      writing-mode         : vertical-lr;
+      margin-left: 30px;
+    }
+  
+    .heading img {
+      width: 200px;
+      height: 100px;
+      margin-bottom: 50px;
+    }
+
+    .heading p {
+      margin-bottom: 50px;
+    }
+
+    .description-wrapper {
+      margin-top: 200px;
+      text-align: center;
+      font-size: 20px;
+    }
+  }
+  
+  
+  @media screen and (max-width:500px) {
+    .top-wrapper {
+      text-align: center;
+      padding: 10px 0 200px 0;
+      background-image:url(../IMG/venaqui_background.jpg);
+      background-size: cover;
+      height: 200px;
+      background-repeat: no-repeat;
+    }
+
+    .venaquiImg {
+      position: fixed;
+      width: 250px;
+      width: 250px;
+      margin-top: -100px;
+      margin-left: -50px;
+    }
+    
+    .maincontainer h1 {
+      padding-top: 20px;
+      font-family:serif;
+      font-size: 30px;
+      color: turquoise;
+      text-shadow: rgb(67, 66, 66) 10px 10px 30px;
+    }
+    
+    .maincontainer h2 {
+      padding-top: 10px;
+      letter-spacing: 10px;
+      font-size: 25px;
+    }
+    
+    .maincontainer p {
+      letter-spacing: 3px;
+      font-size: 15px;
+      margin-right: 20px;
+      margin-left: 20px;
+    }
+
+    .btn-wrapper {
+      margin-top: 50px;
+    }
+    
+    .btn {
+      color: white;
+      display: inline;
+      text-align: center;
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: rgb(36, 124, 115);
+      background-color:turquoise;
+    }
+    
+    .btn:active {
+      position:relative;
+      background-color:rgb(172, 170, 170);
+      top:7px;
+      box-shadow: none;
+    }
+    
+    .btn:hover {
+      opacity: 1;
+    }
+
+    .btn-one {
+      color:rgb(67, 66, 66);
+      font-family:initial;
+    }
+
+    .btn-two {
+      color:rgb(67, 66, 66);
+      font-family: initial;
+    }
+
+    .btn-three {
+      color:rgb(67, 66, 66);
+      font-family: initial;
+    }
+
+    .maintitle{
+      color: turquoise;
+      width: 100%;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      position: absolute;
+      font-size: 100px;
+      text-align: center;
+      margin-top: -170px;
+      opacity: 0.1;
+      overflow: hidden;
+    }
+
+    .venaqui {
+      position: fixed;
+      bottom: 20px;
+      font-size: 20px;
+      font-family: monospace;
+      -webkit-writing-mode : vertical-lr;
+      writing-mode         : vertical-lr;
+      margin-left: 30px;
+    }
+  
+    .heading img {
+      width: 100px;
+      height: 50px;
+      margin-bottom: 30px;
+    }
+
+    .heading p {
+      margin-bottom: 30px;
+    }
+
+    .description-wrapper {
+      margin-top: 100px;
+      text-align: center;
+      font-size: 15px;
+    }
+    
+}
+ 
